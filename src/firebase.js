@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+import dotenv from 'dotenv'
+dotenv.config()
 import {
   GoogleAuthProvider,
   getAuth,
@@ -18,14 +20,14 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCHwG3sos9WY52T35Ot0ZZS_jFNObwTIg0",
-  authDomain: "tanhaji-dapp.firebaseapp.com",
-  databaseURL: "https://tanhaji-dapp-default-rtdb.firebaseio.com",
-  projectId: "tanhaji-dapp",
-  storageBucket: "tanhaji-dapp.appspot.com",
-  messagingSenderId: "723398010047",
-  appId: "1:723398010047:web:ac3bfddf97c6e40d0c520a",
-  measurementId: "G-K9YBE8W59J"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId:  process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
